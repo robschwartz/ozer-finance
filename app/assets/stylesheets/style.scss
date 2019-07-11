@@ -500,8 +500,13 @@ footer
         margin-top: 0;
         width: unset;
     }
+
+    .form-control {
+        width: -webkit-fill-available !important;
+    }
+
     .banner {
-        background: asset-url('mobile_banner.png') no-repeat fixed !important;
+        background: asset-url('banner.png') no-repeat fixed !important;
         background-size: cover !important; 
     }
 }
