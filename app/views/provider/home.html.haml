@@ -11,7 +11,7 @@
               %span.icon-bar
             %a.navbar-brand{:href => "/"}
               -# =image_tag("ozer-logo.png", :style => "width: 140px; margin-top: -16px;", class: "img-responsive")
-              .white Senior Home Finder
+              .white Express Capital Loans
           #myNavbar.collapse.navbar-collapse.navbar-right
             %ul.nav.navbar-nav
               %li.active
@@ -31,11 +31,11 @@
       .row
         .banner-info
           .banner-logo.text-center.home-banner-copy
-            %h1.white Senior Home Finder
+            %h1.white Find the best rate for your loan
           .banner-text.text-center
-            %h1.white Find the perfect home for your loved one
+            %h1.white Send your request and get rates immediately
             %p.home-banner-copy
-              Search by City, State, or Zip to find a home closest to you.
+              Let's start with how much you need to borrow
               %br/
               - flash.each do |key, value|
                 %div{:class => "alert alert-#{key}"}
@@ -45,7 +45,7 @@
               .row
                 = form_tag(controller: :provider , action: :search) do
                   .form-group.col-md-4.col-md-offset-4.col-xs-10.col-xs-offset-1
-                    %input.form-control{name: 'search', placeholder: 'Enter City, State, or Zip...', required: true}
+                    %input.form-control{name: 'search', placeholder: 'Enter loan amount', required: true}
                     -# .form-check.form-check-inline
                     -#   %label.form-check-label
                     -#     Nursing Home
@@ -56,7 +56,8 @@
                     -#   %label.form-check-label
                     -#     Both
                     -#     %input.form-check-input{type:'radio',name: 'home_type', value:"", required: true, checked:true}
-                    %button.btn.btn-default.search-submit{type: :submit} Submit
+                    %br
+                    %button.btn.btn-default.search-submit{type: :submit} Get My Rates
           -# .overlay-detail.text-center
             -# %a{:href => "#service"}
             -#   %i.fa.fa-angle-down
@@ -71,19 +72,24 @@
           .mt-boxy-color
           .medi-info
             %h3 Request Info
-            %p Let us do the leg work in fining you a Nursing Home that best suits your needs. Send in the form below and someone will contact you shortly.
-            %small
-              %strong.center*TIP: Enter the location where you are looking for a home.
+            %p Let us do the leg work in finding you a Loan that best suits your needs. Send in the form below and someone will contact you shortly.
             = form_tag(controller: :provider , action: :req_info) do
               .form-group.col-xs-10
-                %input.form-control{name: 'name', placeholder: 'Full Name', required: true}
-                %input.form-control{name: 'location', placeholder: 'City, State or Zip', required: true}
-                %input.form-control{name: 'email', placeholder: 'Email', required: true}
-                %input.form-control{name: 'number', placeholder: 'Phone Number', required: true}
-                %input.form-control{name: 'web_referral', type:'hidden', value: "seniorcarefacilityfinder"}
-                %select.form-control{ :name => "home_type" }
-                  %option{:value => "assisted_living"}= "Assisted Living Facility"
-                  %option{:value => "nursing_home"}= "Nursing Home"   
+                %input.form-control{name: 'name', placeholder: 'Your Name', required: true, type: 'text'}
+                %input.form-control{name: 'email', placeholder: 'Email', required: true, type: 'text'}
+                %input.form-control{name: 'number', placeholder: 'Phone Number', required: true, type: 'text'}
+                %br
+                %input.form-control{name: 'company_name', placeholder: 'Company Name', required: true, type: 'text'}
+                %input.form-control{name: 'web_referral', type:'hidden', value: "ozerfinance"}
+                -# %input.form-control{name: 'company_name', placeholder: 'Annual Sales', required: true, type: 'number', min: 100000}
+                %select.form-control{ :name => "annual_sales" }
+                  %option{:value => ""}= "Annual Sales"
+                  %option{:value => "100000"}= "~ $100,000"
+                  %option{:value => "250000"}= "$100,000 ~ $250,000"   
+                  %option{:value => "500000"}= "$250,000 ~ $500,000"
+                  %option{:value => "1000000"}= "$500,000 ~ $1,000,000"   
+                  %option{:value => "00000"}= "$1,000,000 ~"    
+                %input.form-control{name: 'company_name', placeholder: 'Years in Business', required: true, type: 'number'}   
                 -# .form-check.form-check-inline
                 -#   %label.form-check-label
                 -#     Nursing Home
@@ -94,6 +100,8 @@
                 -#   %label.form-check-label
                 -#     Both
                 -#     %input.form-check-input{type:'radio',name: 'home_type', value:"", required: true, checked:true}
+                %br
+                %br
                 %button.form-control.btn.btn-default.search-submit{type: :submit} Submit
 
 / / banner
@@ -191,19 +199,19 @@
               %p Medicare, Medicaid and other resources can help minimize the cost of long-term care.
 / / about
 / State List
-%section.section-padding.state-section
-  .container
-    .row
-      %h2 Senior Homes By State
-      %hr.bottom-line
+-# %section.section-padding.state-section
+-#   .container
+-#     .row
+-#       %h2 Senior Homes By State
+-#       %hr.bottom-line
 
-    .row
-      %ul.state-list.list-inline
-        -@states.each do |key, val|
-          %li
-            %a{:href => "/adult-home-finder/adult-homes/#{val}", :title=>"Assisted Living Facility Nursing Home in #{val}"}
-              =val
-  %hr
+-#     .row
+-#       %ul.state-list.list-inline
+-#         -@states.each do |key, val|
+-#           %li
+-#             %a{:href => "/adult-home-finder/adult-homes/#{val}", :title=>"Assisted Living Facility Nursing Home in #{val}"}
+-#               =val
+-#   %hr
 
 / cta
 / contact
