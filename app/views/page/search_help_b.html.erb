@@ -10,7 +10,7 @@
           </button>
           <a class="navbar-brand" href="/">
             <% # =image_tag("ozer-logo.png", :style => "width: 140px; margin-top: -16px;", class: "img-responsive") %>
-            <div class="white">Senior Home Finder</div>
+            <div class="white">Express Loan Rates</div>
           </a>
         </div>
         <div class="collapse navbar-collapse navbar-right" id="myNavbar">
@@ -44,14 +44,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="ser-title">GET YOUR FREE CONSULT!</h2>
+        <h2 class="ser-title">SEE YOUR RATES!</h2>
         <hr class="botm-line"/>
       </div>
       <div class="col-md-4 col-sm-4">
         <h3></h3>
         <div class="space"></div>
         <p>
-          Fill in the form and one of our experts will help find you the best home for your loved on.
+          Fill in the form and one of our experts will help find you the best rate for your business loan.
         </p>
       </div>
       <div class="col-md-8 col-sm-8 marb20">
@@ -67,7 +67,7 @@
                           <div class="form-top">
                               <div class="form-top-left">
                                   <h3>First, let's get basic information</h3>
-                                  <p>Let us know who our experts will be speaking to</p>
+                                  <p>Let us know who our experts will be speaking to.</p>
                               </div>
                           </div>
                           <div class="form-bottom">
@@ -105,13 +105,38 @@
                         <fieldset>
                           <div class="form-top">
                             <div class="form-top-left">
-                              <h3>Next, confirm the city you are searching in</h3>
-                              <p>We want to make sure to only show you homes in the area you are interested in</p>
+                              <h3>Next, a little about your business</h3>
+                              <p>We want to make sure to only show you the best rates we can find.</p>
                             </div>
                           </div>
                           <div class="form-bottom">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="location" placeholder="City or Zipcode" value="<%= @location %>">
+                              <input class="form-control" name="company_name" placeholder="Company Name" required="true" type="text"></input>
+                            </div>
+                            <div class="form-group">
+                              <select class="form-control" name="annual_sales" required="true">
+                                <option value="">
+                                  Annual Sales
+                                </option>
+                                <option value="1">
+                                  ~ $100,000
+                                </option>
+                                <option value="2">
+                                  $100,000 ~ $250,000
+                                </option>
+                                <option value="3">
+                                  $250,000 ~ $500,000
+                                </option>
+                                <option value="4">
+                                  $500,000 ~ $1,000,000   
+                                </option>
+                                <option value="5">
+                                  $1,000,000 ~
+                                </option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control" name="business_years" placeholder="Years in Business" required="true" type="number"></input>
                             </div>
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
@@ -120,13 +145,13 @@
                         <fieldset>
                           <div class="form-top">
                             <div class="form-top-left">
-                              <h3>Last, let us know the move in date</h3>
-                              <p>Some facilties don't have vacancy so we will make sure to send the ones that do</p>
+                              <h3>Last, let us know when you are looking to aquire your loan</h3>
+                              <p>Some lenders work quicker than others, so we want to make sure to send you rates that are available when you need it.</p>
                             </div>
                           </div>
                           <div class="form-bottom">
                             <div class="form-group">
-                              <input type="date" class="form-control" id="pref_date">
+                              <input type="date" class="form-control" id="pref_date" value="" required="true">
                             </div>
                             <%= recaptcha_tags %>
                             <button type="button" class="btn btn-previous">Previous</button>

@@ -9,7 +9,7 @@
             %span.icon-bar
           %a.navbar-brand{:href => "/"}
             -# =image_tag("ozer-logo.png", :style => "width: 140px; margin-top: -16px;", class: "img-responsive")
-            .white Senior Home Finder
+            .white Express Loan Rates
         #myNavbar.collapse.navbar-collapse.navbar-right
           %ul.nav.navbar-nav
             %li.active
@@ -30,13 +30,13 @@
   .container
     .row
       .col-md-12
-        %h2.ser-title GET YOUR FREE CONSULT!
+        %h2.ser-title GET YOUR RATES!
         %hr.botm-line/
       .col-md-4.col-sm-4
         %h3
         .space
         %p
-          Fill in the form and one of our experts will help find you the best home for your loved on.
+          Fill in the form and one of our experts will help find you the best rate for your business loan.
 
       .col-md-8.col-sm-8.marb20
         .contact-info
@@ -48,7 +48,7 @@
             %input.form-control{name: 'help_form', type:'hidden', value: "true"}
             %input.form-control{name: 'form_version', type:'hidden', value: "A"}
             .form-group
-              %input#name.form-control.br-radius-zero{"data-msg" => "Please enter at least 4 chars", "data-rule" => "minlen:4", :name => "name", :placeholder => "Name", :type => "text"}/
+              %input#name.form-control.br-radius-zero{"data-msg" => "Please enter at least 4 chars", "data-rule" => "minlen:4", :name => "name", :placeholder => "First and Last Name", :type => "text"}/
               .validation
             .form-group
               %input#email.form-control.br-radius-zero{"data-msg" => "Please enter a valid email", "data-rule" => "email", :name => "email", :placeholder => "Email", :type => "email"}/
@@ -57,12 +57,17 @@
               %input#number.form-control.br-radius-zero{"data-msg" => "Please enter a valid phone number (xxx-xxx-xxxx)", "data-rule" => "phone", :name => "number", :placeholder => "Phone Number", :type => "text"}/
               .validation
             .form-group
-              %input#location.form-control.br-radius-zero{"data-msg" => "Please enter a valid Zip Code", "data-rule" => "minlen:5", :name => "location", :value => @location, :placeholder => "Zip Code", :type => "text"}/
-              .validation
+              %input.form-control{name: 'company_name', placeholder: 'Company Name', required: true, type: 'text'}
             .form-group
-              %select.form-control{ :name => "home_type" }
-                %option{:value => "assisted_living"}= "Assisted Living Facility"
-                %option{:value => "nursing_home"}= "Nursing Home"
+              %select.form-control{ :name => "annual_sales" }
+                %option{:value => ""}= "Annual Sales"
+                %option{:value => 1}= "~ $100,000"
+                %option{:value => 2}= "$100,000 ~ $250,000"   
+                %option{:value => 3}= "$250,000 ~ $500,000"
+                %option{:value => 4}= "$500,000 ~ $1,000,000"   
+                %option{:value => 5}= "$1,000,000 ~"  
+            .form-group  
+              %input.form-control{name: 'business_years', placeholder: 'Years in Business', required: true, type: 'number'}   
             = recaptcha_tags
             .form-action
-              %button.btn.btn-form{:type => "submit"} Get My List!
+              %button.form-control.btn.btn-default.search-submit{type: :submit} Submit

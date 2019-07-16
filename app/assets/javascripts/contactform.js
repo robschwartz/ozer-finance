@@ -120,7 +120,7 @@ $(document).ready(function () {
             emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i,
             phoneExp = /^\d{3}[\-]?\d{3}[\-]?\d{4}$/;
 
-        parent_fieldset.find('input[type="text"],input[type="email"]').each(function () {
+        parent_fieldset.find('input[type="text"],input[type="email"],input[type="number"],input[type="date"],select[name="annual_sales"]').each(function () {
             if ($(this).val() == "") {
                 console.log('input', $(this).val())
                 $(this).addClass('input-error');
