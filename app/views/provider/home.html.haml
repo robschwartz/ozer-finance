@@ -75,21 +75,21 @@
             %p Let us do the leg work in finding you the best rate for your loan. Submit the form below and someone will contact you shortly.
             = form_tag(controller: :provider , action: :req_info) do
               .form-group.col-xs-10
-                %input.form-control{name: 'name', placeholder: 'First and Last Name', required: true, type: 'text'}
-                %input.form-control{name: 'email', placeholder: 'Email', required: true, type: 'text'}
-                %input.form-control{name: 'number', placeholder: 'Phone Number', required: true, type: 'text'}
+                %input.form-control{name: 'loan_lead[name]', placeholder: 'First and Last Name', required: true, type: 'text'}
+                %input.form-control{name: 'loan_lead[email]', placeholder: 'Email', required: true, type: 'text'}
+                %input.form-control{name: 'loan_lead[number]', placeholder: 'Phone Number', required: true, type: 'text'}
                 %br
-                %input.form-control{name: 'company_name', placeholder: 'Company Name', required: true, type: 'text'}
-                %input.form-control{name: 'web_referral', type:'hidden', value: "ozerfinance"}
+                %input.form-control{name: 'loan_lead[company_name]', placeholder: 'Company Name', required: true, type: 'text'}
+                -# %input.form-control{name: 'web_referral', type:'hidden', value: "ozerfinance"}
                 -# %input.form-control{name: 'company_name', placeholder: 'Annual Sales', required: true, type: 'number', min: 100000}
-                %select.form-control{ :name => "annual_sales" }
+                %select.form-control{ :name => "loan_lead[annual_sales]" }
                   %option{:value => ""}= "Annual Sales"
                   %option{:value => 1}= "~ $100,000"
                   %option{:value => 2}= "$100,000 ~ $250,000"   
                   %option{:value => 3}= "$250,000 ~ $500,000"
                   %option{:value => 4}= "$500,000 ~ $1,000,000"   
                   %option{:value => 5}= "$1,000,000 ~"    
-                %input.form-control{name: 'business_years', placeholder: 'Years in Business', required: true, type: 'number'}   
+                %input.form-control{name: 'loan_lead[years_in_business]', placeholder: 'Years in Business', required: true, type: 'number'}   
                 %br
                 %br
                 %button.form-control.btn.btn-default.search-submit{type: :submit} Submit
