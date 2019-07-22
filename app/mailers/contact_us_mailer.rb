@@ -9,6 +9,7 @@ class ContactUsMailer < ApplicationMailer
   end
 
   def lead_capture(params)
+    puts params
     @name = params["name"]
     @email = params["email"]
     @phone = params["number"]
@@ -18,6 +19,8 @@ class ContactUsMailer < ApplicationMailer
   end
 
   def thank_you(params)
+    puts params
+
     @name = params["name"]
     mail( :to => params["email"],
     :subject => "Your information has been received!")
