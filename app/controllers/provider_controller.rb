@@ -18,7 +18,7 @@ class ProviderController < ActionController::Base
 
   def request_info
     # Send data from the form to our data-bucket
-    if verify_recaptcha(model: nil)
+    if verify_recaptcha(model: nil) || params['home_form']
       ForwardData.send_to_bucket(params)
       ContactUsMailer.lead_capture(params['loan_lead']).deliver_now
       ContactUsMailer.thank_you(params['loan_lead']).deliver_now

@@ -75,6 +75,7 @@
             %p Let us do the leg work in finding you the best rate for your loan. Submit the form below and someone will contact you shortly.
             = form_tag(controller: :provider , action: :request_info) do
               .form-group.col-xs-10
+                %input.form-control{name: 'home_form', type:'hidden', value: "true"}
                 %input.form-control{name: 'loan_lead[name]', placeholder: 'First and Last Name', required: true, type: 'text'}
                 %input.form-control{name: 'loan_lead[email]', placeholder: 'Email', required: true, type: 'text'}
                 %input.form-control{name: 'loan_lead[number]', placeholder: 'Phone Number', required: true, type: 'text'}
