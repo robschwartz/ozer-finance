@@ -72,7 +72,7 @@
                           </div>
                           <div class="form-bottom">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" name="name">
+                                <input type="text" class="form-control" placeholder="Full Name" name="loan_lead[name]">
                             </div>
                             <div class="form-group">
                                 <input 
@@ -80,7 +80,7 @@
                                   pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" 
                                   class="form-control" 
                                   placeholder="Phone Number (xxx-xxx-xxxx)" 
-                                  name="number" 
+                                  name="loan_lead[number]" 
                                   title="Please enter your number as XXX-XXX-XXXX"
                                   data-rule="phone"
                                   id="phone"
@@ -90,7 +90,7 @@
                             <div class="form-group">
                                 <input 
                                   type="text" 
-                                  name="email" 
+                                  name="loan_lead[email]" 
                                   placeholder="Email (xx@xx.xx)" 
                                   class="form-email form-control" 
                                   id="email"
@@ -111,10 +111,10 @@
                           </div>
                           <div class="form-bottom">
                             <div class="form-group">
-                              <input class="form-control" name="company_name" placeholder="Company Name" required="true" type="text"></input>
+                              <input class="form-control" name="loan_lead[company_name]" placeholder="Company Name" required="true" type="text"></input>
                             </div>
                             <div class="form-group">
-                              <select class="form-control" name="annual_sales" required="true">
+                              <select class="form-control" name="loan_lead[annual_sales]" required="true">
                                 <option value="">
                                   Annual Sales
                                 </option>
@@ -136,7 +136,7 @@
                               </select>
                             </div>
                             <div class="form-group">
-                              <input class="form-control" name="business_years" placeholder="Years in Business" required="true" type="number"></input>
+                              <input class="form-control" name="loan_lead[years_in_business]" placeholder="Years in Business" required="true" type="number"></input>
                             </div>
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
@@ -151,7 +151,7 @@
                           </div>
                           <div class="form-bottom">
                             <div class="form-group">
-                              <input type="date" class="form-control" id="pref_date" value="" required="true">
+                              <input type="date" class="form-control" id="pref_date" value="" name="loan_lead[loan_date]" required="true">
                             </div>
                             <%= recaptcha_tags %>
                             <button type="button" class="btn btn-previous">Previous</button>
