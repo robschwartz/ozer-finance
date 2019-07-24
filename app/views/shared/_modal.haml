@@ -8,7 +8,7 @@
           %span.sr-only Close
         %h4.modal-title
         .modal-body
-          = form_tag(controller: :provider , action: :req_info) do
+          = form_tag(controller: :provider , action: :request_info) do
             .form-group.col-xs-12
               %input.form-control{name: 'provider_id', type:'hidden'}
               %input.form-control{name: 'web_referral', type:'hidden', value: "seniorcarefacilityfinder"}

@@ -79,7 +79,7 @@
         .main Need Help?
         .sub Let our service team help pair you with the best home for your loved one. Don't worry, this service is free!
       .req-form
-        = form_tag(controller: :provider , action: :req_info) do
+        = form_tag(controller: :provider , action: :request_info) do
           .form-group.col-xs-10
             %input.form-control{name: 'name', placeholder: 'Full Name', required: true}
             %input.form-control{name: 'location', placeholder: 'City, State or Zip', required: true}

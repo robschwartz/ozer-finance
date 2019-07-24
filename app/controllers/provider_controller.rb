@@ -16,15 +16,18 @@ class ProviderController < ActionController::Base
     redirect_to location_path(location: params['search'], home_type: params['home_type'])
   end
 
-  def req_info
+  def request_info
     # Send data from the form to our data-bucket
     if verify_recaptcha(model: nil)
-      ForwardData.send_to_bucket(params['loan_lead'])
+      ForwardData.send_to_bucket(params)
       ContactUsMailer.lead_capture(params['loan_lead']).deliver_now
       ContactUsMailer.thank_you(params['loan_lead']).deliver_now
 
       redirect_to thank_you_path and return 
     end
+  rescue => e
+    puts "ERROR CAPTURING LEAD: #{e}"
+    redirect_to thank_you_path and return 
   end
 
   def send_contact_form
