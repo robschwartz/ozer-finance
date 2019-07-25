@@ -44,7 +44,7 @@
           .space
           #sendmessage Your message has been sent. Thank you!
           #errormessage
-          %form.contactForm{ controller: :provider, :action => "request-info", :method => "post", :role => "form"}
+          %form.contactForm{ controller: :provider, :action => "request_info", :method => "post", :role => "form"}
             %input.form-control{name: 'help_form', type:'hidden', value: "true"}
             %input.form-control{name: 'form_version', type:'hidden', value: "A"}
             .form-group
