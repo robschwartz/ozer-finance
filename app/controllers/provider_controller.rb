@@ -66,6 +66,8 @@ class ProviderController < ActionController::Base
     unless accepted_countries.include?(ip['country_code'])
       render "page/not_serviced" and return
     end
+  rescue => e  
+    puts "ERROR CHECKING COUNTRY #{e}"
   end
 
 
