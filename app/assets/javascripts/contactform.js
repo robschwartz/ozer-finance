@@ -86,7 +86,7 @@ jQuery(document).ready(function ($) {
         else var str = $(this).serialize();
         var postUrl = "/send-contact-form"
         if (str.includes('help_form')) {
-            postUrl = "/provider/request-info";
+            postUrl = "/request_info";
         }
         $.ajax({
             type: "POST",
@@ -185,7 +185,7 @@ $(document).ready(function () {
         var str = $(this).serialize();
         var postUrl = "/send-contact-form"
         if (str.includes('help_form')) {
-            postUrl = "/provider/request-info";
+            postUrl = "/request_info";
         }
 
         $.ajax({
