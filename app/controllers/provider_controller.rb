@@ -1,6 +1,8 @@
 class ProviderController < ActionController::Base
   layout 'application'
 
+  before_action :check_country
+
   def root
     @states = CS.states(:us)
     set_title_tag
@@ -55,6 +57,15 @@ class ProviderController < ActionController::Base
             else
               "Nursing Homes, Assisted Living Facilities, Intermediate Care Near You"
             end
+  end
+  
+  def check_country
+    accepted_countries = ["US", "CA"]
+    ip = Ipstack::API.check
+    puts ip['country_code']
+    unless accepted_countries.include?(ip['country_code'])
+      render "page/not_serviced" and return
+    end
   end
 
 
