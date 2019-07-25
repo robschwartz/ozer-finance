@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Financial Loans to help you grow your business</title>
+    <meta content="Factor, Factoring, Purchase Order, Financing, Advancing, Receivable, Invoice, Funding, Supply Chain, <%= @location %>, <%= @state %>" name="keywords"/>
+    <meta content="Get your loan approved in 24 hours or less" name="description"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal" rel="stylesheet" type="text/css"></link>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MXSC8NX');</script>
+    <!-- End Google Tag Manager -->
+   
+    <script async="<%= true %>" src="https://www.googletagmanager.com/gtag/js?id=UA-111635553-2"></script>
+
+    <!-- Begin Inspectlet Asynchronous Code
+    -->
+    <script>
+      
+      (function() {
+      window.__insp = window.__insp || [];
+      __insp.push(['wid', 894019484]);
+      var ldinsp = function(){
+      if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=894019484&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+      setTimeout(ldinsp, 0);
+      })();
+
+    </script>
+    <!-- End Inspectlet Asynchronous Code
+    -->
+    </head>
+    <body data-offset="60" data-spy="scroll" data-target=".navbar" id="myPage">
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXSC8NX"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <%= yield %>
+      <%= render :partial => "shared/footer" %>
+      <%= render :partial => "shared/modal" %>
+      <script>
+        
+        $('#req-modal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var name = button.data('name') // Extract info from data-* attributes
+          var provNumber = button.data('provnumber') // Extract info from data-* attributes
+          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          var modal = $(this)
+          modal.find('.modal-title').text('Request Info for ' + name)
+          modal.find('.modal-body input[name="provider_id"]').val(provNumber)
+        })
+        // GA Tag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-111635553-2');
+
+
+      </script>
+    </body>
+</html>

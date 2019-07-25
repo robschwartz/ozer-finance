@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/provider/search', to: 'provider#search'
 
   post '/request_info', to: 'provider#request_info'
+  post '/provider/request_info', to: 'provider#request_info'
 
   post '/send-contact-form', to: 'provider#send_contact_form'
 
