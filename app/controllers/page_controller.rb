@@ -10,8 +10,8 @@ class PageController < ActionController::Base
   def contact;end
 
   def search_help
-    form_version = ["a","b"]
-    # form_version = ["b"]
+    # form_version = ["a","b"]
+    form_version = ["a"]
     version = form_version.sample
     
     @location = params['location']
