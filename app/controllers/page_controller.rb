@@ -14,7 +14,7 @@ class PageController < ActionController::Base
     form_version = ["a"]
     version = form_version.sample
     
-    @location = params['location']
+    @amount = params['amount']
 
     puts version
     render "search_help_#{version}"

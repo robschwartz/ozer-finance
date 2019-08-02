@@ -1,5 +1,5 @@
 New Lead!
 
-Name: <%= @name %>
-Email: <%= @email %>
-Phone: <%= @phone %>
+<% @params.each do |key, value| %>
+ <%= key.capitalize %>: <%= value %>
+<% end %>

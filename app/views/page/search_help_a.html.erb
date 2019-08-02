@@ -1,0 +1,118 @@
+<div class="bg-color-results">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <% # =image_tag("ozer-logo.png", :style => "width: 140px; margin-top: -16px;", class: "img-responsive") %>
+            <div class="white">Express Loan Rates</div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <% # %li %>
+            <% #   %a{:href => "/about"} About %>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+            <li>
+              <a href="tel:(516)725-5312">(516) 725-5312</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<br/>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>-contact">
+    <button aria-label="Close" class="close" data-dismiss="alert" type="button"></button>
+    <span aria-hidden="true"></span>
+    <%= value.html_safe %>
+  </div>
+<% end %>
+<section class="section-padding" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="ser-title">GET YOUR RATES!</h2>
+        <hr class="botm-line"/>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h3></h3>
+        <div class="space"></div>
+        <p>
+          Fill in the form and one of our experts will help find you the best rate for your <% if @amount %>$<%= @amount %><% end %> business loan.
+        </p>
+      </div>
+      <div class="col-md-8 col-sm-8 marb20">
+        <div class="contact-info">
+          <h3 class="cnt-ttl"></h3>
+          <div class="space"></div>
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="request_info" class="contactForm" controller="<%= :provider %>" method="post" role="form">
+            <input class="form-control" name="help_form" type="hidden" value="true">
+            <input class="form-control" name="form_version" type="hidden" value="A">
+            <div class="form-group">
+              <input class="form-control" data-msg="Please enter at least 4 chars" data-rule="minlen:4" id="name" name="loan_lead[name]" placeholder="First and Last Name" type="text" required="true">
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input class="form-control" data-msg="Please enter a valid email" data-rule="loan_lead[email]" id="email" name="loan_lead[email]" placeholder="Email" type="email" required="true">
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input class="form-control" data-msg="Please enter a valid phone number (xxx-xxx-xxxx)" data-rule="phone" id="number" name="loan_lead[number]" placeholder="Phone Number" type="text" required="true">
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="loan_lead[company_name]" placeholder="Company Name" required="true" type="text">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="loan_lead[loan_amount]" placeholder="Loan Amount" required="true" type="number" value="<%= @amount %>">
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="loan_lead[annual_sales]" required="true">
+                <option>
+                  <%= "Annual Sales" %>
+                </option>
+                <option value="1">
+                  <%= "~ $100,000" %>
+                </option>
+                <option value="2">
+                  <%= "$100,000 ~ $250,000"    %>
+                </option>
+                <option value="3">
+                  <%= "$250,000 ~ $500,000" %>
+                </option>
+                <option value="4">
+                  <%= "$500,000 ~ $1,000,000"    %>
+                </option>
+                <option value="5">
+                  <%= "$1,000,000 ~"   %>
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="loan_lead[years_in_business]" placeholder="Years in Business" required="true" type="number">
+            </div>
+            <%= recaptcha_tags %>
+            <div class="form-action">
+              <button class="form-control btn btn-default search-submit" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

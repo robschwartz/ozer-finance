@@ -10,9 +10,7 @@ class ContactUsMailer < ApplicationMailer
 
   def lead_capture(params)
     puts params
-    @name = params["name"]
-    @email = params["email"]
-    @phone = params["number"]
+    @params = params
     # @location = params["location"]
     mail( :to => "robertschwar@gmail.com",
     :subject => " $$$ New Lead $$$ ")

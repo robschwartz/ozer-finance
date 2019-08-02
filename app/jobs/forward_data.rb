@@ -4,8 +4,11 @@ require 'net/http'
 module ForwardData
   def self.send_to_bucket(req_info)
 
-    url = URI("https://data-bucket.herokuapp.com/incoming-loan-lead")
-    # url = URI(ENV['DATA_BUCKET_URL'])
+    if Rails.env.production?
+      url = URI("https://data-bucket.herokuapp.com/incoming-loan-lead")
+    else
+      url = URI(ENV['DATA_BUCKET_URL'])
+    end
 
     http = Net::HTTP.new(url.host, url.port)
     if Rails.env.production?
