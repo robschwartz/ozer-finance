@@ -68,3 +68,7 @@
 .form-control {
   margin-bottom: 2px;
 }
+
+.nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .navbar-default:after .navbar-fixed-top:after {
+  clear: unset !important;
+}
