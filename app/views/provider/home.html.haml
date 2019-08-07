@@ -83,7 +83,8 @@
                 %input.form-control{name: 'loan_lead[company_name]', placeholder: 'Company Name', required: true, type: 'text'}
                 -# %input.form-control{name: 'web_referral', type:'hidden', value: "ozerfinance"}
                 -# %input.form-control{name: 'company_name', placeholder: 'Annual Sales', required: true, type: 'number', min: 100000}
-                %select.form-control{ :name => "loan_lead[annual_sales]", placeholder: 'Annual Sales' }
+                %select.form-control{ :name => "loan_lead[annual_sales]" placeholder: 'Annual Sales' }
+                  %option{:value => ""}= "Annual Sales"
                   %option{:value => 1}= "~ $100,000"
                   %option{:value => 2}= "$100,000 ~ $250,000"   
                   %option{:value => 3}= "$250,000 ~ $500,000"
