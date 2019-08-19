@@ -55,6 +55,8 @@ class ProviderController < ActionController::Base
   
   def check_country
     accepted_countries = ["US", "CA"]
+    puts "Forwarded IP: #{ENV['HTTP_X_FORWARDED_FOR']}"
+    # Ipstack::API.standard('134.201.250.155')
     ip = Ipstack::API.check
     puts "IP object: #{ip}"
     puts "Country Code: #{ip['country_code']}"
