@@ -48,6 +48,10 @@ class ProviderController < ActionController::Base
 
 
   private
+
+  def set_title_tag
+    "Get your business loan approved in 24 hours or less"
+  end
   
   def check_country
     accepted_countries = ["US", "CA"]
