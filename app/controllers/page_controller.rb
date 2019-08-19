@@ -25,7 +25,7 @@ class PageController < ActionController::Base
   def check_country
     accepted_countries = ["US", "CA"]
     ip = Ipstack::API.check
-    puts ip['country_code']
+    puts "Country Code: #{ip['country_code']}"
     unless accepted_countries.include?(ip['country_code'])
       render "page/not_serviced" and return
     end
