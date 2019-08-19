@@ -56,9 +56,8 @@ class ProviderController < ActionController::Base
   def check_country
     accepted_countries = ["US", "CA"]
     puts "Forwarded IP: #{request.remote_ip}"
-    # Ipstack::API.standard('134.201.250.155')
-    ip = Ipstack::API.check
-    puts "IP object: #{ip}"
+    ip =Ipstack::API.standard(request.remote_ip)
+    puts "IP object: #{request.remote_ip}"
     puts "Country Code: #{ip['country_code']}"
     unless accepted_countries.include?(ip['country_code'])
       render "page/not_serviced" and return
