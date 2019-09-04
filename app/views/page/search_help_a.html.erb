@@ -84,22 +84,56 @@
             <div class="form-group">
               <select class="form-control" name="loan_lead[annual_sales]" required="true">
                 <option>
-                  <%= "Annual Sales" %>
+                Annual Sales
                 </option>
                 <option value="1">
-                  <%= "~ $100,000" %>
+                ~ $100,000
                 </option>
                 <option value="2">
-                  <%= "$100,000 ~ $250,000"    %>
+                $100,000 ~ $250,000
                 </option>
                 <option value="3">
-                  <%= "$250,000 ~ $500,000" %>
+                $250,000 ~ $500,000
                 </option>
                 <option value="4">
-                  <%= "$500,000 ~ $1,000,000"    %>
+                $500,000 ~ $1,000,000
                 </option>
                 <option value="5">
-                  <%= "$1,000,000 ~"   %>
+                $1,000,000 ~
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="loan_lead[loan_type]" required="true">
+                <option>
+                Loan Type
+                </option>
+                <option value="mca">
+                Merchant Cash Advance
+                </option>
+                <option value="business_term_loan">
+                Business Term Loan
+                </option>
+                <option value="business_line_of_credit">
+                Business Line of Credit
+                </option>
+                <option value="invoice_factoring">
+                Invoice Factoring
+                </option>
+                <option value="sba_loan">
+                SBA Loan
+                </option>
+                <option value="equipment_financing">
+                Equipment Financing
+                </option>
+                <option value="microloan">
+                Microloan
+                </option>
+                <option value="installment_loan">
+                Installment Loans
+                </option>
+                <option value="installment_loan">
+                Other
                 </option>
               </select>
             </div>
