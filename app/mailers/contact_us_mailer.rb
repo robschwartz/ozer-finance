@@ -4,7 +4,7 @@ class ContactUsMailer < ApplicationMailer
   # send a signup email to the user, pass in the user object that   contains the user's email address
   def contact(params)
     @message = params['message']
-    mail( :to => "robertschwar@gmail.com",
+    mail( :to => "rob.ozerfinance@gmail.com",
     :subject => params['subject'] )
   end
 
@@ -12,8 +12,8 @@ class ContactUsMailer < ApplicationMailer
     puts params
     @params = params
     # @location = params["location"]
-    mail( :to => "robertschwar@gmail.com",
-    :subject => " $$$ New Lead $$$ ")
+    mail( :to => "rob.ozerfinance@gmail.com",
+    :subject => "New Lead")
   end
 
   def thank_you(params)
